@@ -3,21 +3,18 @@ package com.batch.maybatch.oops.polymorphism.overloading.operatorOverloading;
 public class OverloadedOperator {
 
     public static void main(String[] args){
-        int a = 10;
-        int b = 20;
-        int result = a+b;
-     //  System.out.println("result " + result);
 
-        String firstName = "Ashish";
-        String lastName = "Gautam";
-        String fullName = firstName+lastName;
+        int mangoPrice = 10;
+        int appleCost = 20;
 
-    //   System.out.println(fullName);
+        String name = "Mahikshit";
+        String surname = " Yadav";
 
+        String preText = " Total cost of  mongoes and apple is  : ";
 
-        System.out.println(a+b+firstName+(a+b));
+       // System.out.println(name + surname);
 
-
+        System.out.println(preText + ( mangoPrice +  appleCost )  );
 
 
     }

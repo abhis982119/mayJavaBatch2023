@@ -24,7 +24,6 @@ public class MyMath {
 
 
 
-
     public int add( byte a , byte b){
         return  a+ b ;
     }
@@ -55,10 +54,11 @@ public class MyMath {
     }
 
     public double square(double d){
+
         System.out.println("Double method called : " );
         return d*d;
-    }
 
+    }
 
 
 
