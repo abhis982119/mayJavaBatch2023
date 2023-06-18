@@ -14,4 +14,5 @@ public class A {
    static int salary = 20000000;  //4 byte
 
 
+
 }

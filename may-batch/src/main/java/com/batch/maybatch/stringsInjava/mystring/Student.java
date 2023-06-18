@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.ArrayList;
+import java.util.concurrent.CompletableFuture;
+
 @Getter
 @ToString
 public class Student extends  Object{
@@ -38,7 +41,12 @@ public class Student extends  Object{
             return false;
         }
 
+
+
      return true;
 
     }
+
+
+
 }
