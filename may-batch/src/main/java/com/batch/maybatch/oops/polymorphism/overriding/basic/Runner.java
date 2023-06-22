@@ -7,9 +7,7 @@ public class Runner {
 
 
 
-
-
-
+      //  A a = new A();
 
     }
 

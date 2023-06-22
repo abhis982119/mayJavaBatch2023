@@ -1,6 +1,9 @@
 package com.batch.maybatch.oops.polymorphism.overriding.basic;
 
-public class A {
+public class A extends  Object {
+
+   int maxAge ;
+
 
 
 
