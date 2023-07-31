@@ -1,5 +1,8 @@
 package com.batch.maybatch.oops.inheritance.animal;
 
+import lombok.ToString;
+
+@ToString
 public class Cat extends Mammal {
 
     public void  speak(){
