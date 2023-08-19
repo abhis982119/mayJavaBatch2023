@@ -24,9 +24,9 @@ public class PC {
             System.out.println(Thread.currentThread().getName() + " : got lock and about to start producing burgers.");
 
             //overflow condition check
-            if (burgerQueue.size() == batchSize) {
+                if (burgerQueue.size() == batchSize) {
                 System.out.println(Thread.currentThread().getName() + " : Batch of burgers created, waiting : ");
-                wait();
+
             }
 
             //producing burger until batch completes
@@ -38,6 +38,7 @@ public class PC {
             }
 
             notify();
+            wait();
         }
 
         if(unitProduced == maxUnitToProduce){

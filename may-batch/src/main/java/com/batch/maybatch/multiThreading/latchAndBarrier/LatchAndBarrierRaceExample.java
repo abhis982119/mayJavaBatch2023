@@ -28,8 +28,6 @@ public class LatchAndBarrierRaceExample {
 
         Runnable raceTask = getRaceTask(latch, barrier, positions);
 
-        Semaphore
-
         for(int i = 0; i < players ; i++){
             new Thread(raceTask).start();
         }
