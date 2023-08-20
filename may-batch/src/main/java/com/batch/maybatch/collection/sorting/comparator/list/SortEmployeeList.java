@@ -2,10 +2,7 @@ package com.batch.maybatch.collection.sorting.comparator.list;
 
 import com.batch.maybatch.collection.entity.Employee;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class SortEmployeeList {
 
@@ -36,6 +33,10 @@ public class SortEmployeeList {
 
         System.out.println("Employees sorted by id");
         System.out.println(employees);
+
+        Collections.sort(employees, new EmpNameComparator());
+
+
 
     }
 }
