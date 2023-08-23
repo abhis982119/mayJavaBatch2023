@@ -4,6 +4,8 @@ import java.util.Map;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.locks.Lock;
+
 
 public class AddCountryToMapTask implements Runnable {
 
@@ -16,26 +18,36 @@ public class AddCountryToMapTask implements Runnable {
 
     private CyclicBarrier barrier;
 
+    private final Lock lock  ;
 
-    public AddCountryToMapTask(String country, String capital, Map<String, String> countriesWithCapital, CountDownLatch latch, CyclicBarrier cyclicBarrier) {
+
+    public AddCountryToMapTask(String country, String capital, Map<String, String> countriesWithCapital, CountDownLatch latch, CyclicBarrier barrier, Lock lock) {
         this.country = country;
         this.capital = capital;
         this.countriesWithCapital = countriesWithCapital;
         this.latch = latch;
-        this.barrier = cyclicBarrier;
+        this.barrier = barrier;
+        this.lock = lock;
     }
 
     @Override
     public void run() {
         waitForBarrierToBeBroken();
+
+        lock.lock();
        if( countriesWithCapital.containsKey(country) ) {
          //  System.out.println("Key already exist, not putting India with capital : " + capital);
            latch.countDown();
+           lock.unlock();
            return;
        }
 
-        countriesWithCapital.put(country, capital);
-        System.out.println("added country " + country + " with capital " + capital);
+        String value =  countriesWithCapital.putIfAbsent(country, capital);
+        if(value == null) {
+            System.out.println("added country " + country + " with capital " + capital);
+        }
+
+        lock.unlock();
         latch.countDown();
     }
 
