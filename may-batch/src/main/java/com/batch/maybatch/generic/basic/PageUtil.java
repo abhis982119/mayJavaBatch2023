@@ -1,4 +1,6 @@
-package com.batch.maybatch.generic;
+package com.batch.maybatch.generic.basic;
+
+import com.batch.maybatch.generic.basic.Page;
 
 import java.util.List;
 

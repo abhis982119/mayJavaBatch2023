@@ -1,6 +1,5 @@
-package com.batch.maybatch.generic;
+package com.batch.maybatch.generic.basic;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
