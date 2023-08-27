@@ -11,6 +11,8 @@ public class ThreadLocalExample {
     public static void main(String[] args) {
         ThreadLocal<Integer> localInt =  ThreadLocal.withInitial(()->10);
 
+         Student student = new Student();
+
               /*  Callable <Integer> task = () -> {
                     return 10;
                 };

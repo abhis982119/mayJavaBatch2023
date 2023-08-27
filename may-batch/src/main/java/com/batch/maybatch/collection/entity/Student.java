@@ -1,14 +1,16 @@
 package com.batch.maybatch.collection.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.util.Objects;
 
 @ToString
+@Getter
 @NoArgsConstructor
-@AllArgsConstructor
+
 public final class Student implements  Comparable<Student>{
 
 
@@ -16,6 +18,18 @@ public final class Student implements  Comparable<Student>{
 
     private int rollNumber;
 
+    private int marks;
+
+    public Student(String name, int rollNumber, int marks) {
+        this.name = name;
+        this.rollNumber = rollNumber;
+        this.marks = marks;
+    }
+
+    public Student(String name, int rollNumber) {
+        this.name = name;
+        this.rollNumber = rollNumber;
+    }
 
     @Override
     public int compareTo(Student student) {
